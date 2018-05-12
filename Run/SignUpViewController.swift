@@ -40,9 +40,8 @@ class SignUpViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error)
                 return
             }
-            
             let ref = Database.database().reference(fromURL: "https://runcodingchallenge.firebaseio.com/")
-            guard let uid = user?.uid
+            guard let uid = Auth.auth().currentUser?.uid
                 else {
                     return 
             }
